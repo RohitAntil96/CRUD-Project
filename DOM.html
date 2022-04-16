@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation</title>
+</head>
+<body id="body">
+     <ul id="element" data="valid">                            <!-- data is userdefine attribute -->
+         <li class="list-item">First line</li>                    <!--  All nodes are decendent of html -->
+        <li class="list-item">Second line</li>                   <!-- li tags are the children of ul -->
+         <li class="list-item">Third line</li>                    <!-- All tages are nodes -->
+    </ul>
+    <table>
+        <tr>
+            <td>one</td>
+            <td>Two</td>
+        </tr>
+        <tr>
+            <td>Three</td>
+            <td>four</td>
+        </tr>
+    </table> 
+    <button id="clickBtn" onclick="alert('thanks')">Click Me</button>
+<script>
+    //Access root node(html) and html also called element node
+    console.log(document.documentElement)
+    
+    console.log(document.head)
+    console.log(document.body)
+    console.log(document.body.childNodes)
+    console.log(document.body.children)
+    console.log(document.body.firstChild)    //it show text because space present btw ul and script
+    console.log(document.body.lastChild)
+    console.log(document.body.firstElementChild)
+    console.log(document.body.lastElementChild)  //now it show ul and script as first & last child
+
+    //Using forOf loop
+    console.log(" ")
+    for(node of document.body.children)
+    console.log(node)                    //it traverse in body and return its children
+
+    console.log(" ")
+    console.log(document.body.children[0])
+    
+    const ulTag= document.body.children[0]
+   // console.log(accessTag.nextSibling)
+   console.log(ulTag.nextElementSibling)  //Access next siblings
+
+   console.log(" ")
+   const firstLi= ulTag.children[0]
+   const secondLi= ulTag.children[1]
+   console.log(secondLi.previousElementSibling) //Access previous siblings
+
+    // Table DOM Manipulation
+    console.log("")
+    console.log('-----------------------Table DOM Manipulaton ------------------------------')
+    const tableTag= document.body.children[1]
+    console.log(tableTag)
+    console.log(tableTag.tBodies[0].rows[0].cells[1].textContent)
+    console.log(tableTag.tBodies[0].rows[1].cells[0].textContent)
+    console.log(tableTag.rows)
+
+    // Styling
+    console.log(tableTag.tBodies[0].rows[1].cells[0].style= "background-color: lightblue")
+    console.log(tableTag.tBodies[0].rows[0].style= "background-color: lightgreen")
+    
+
+    console.log("")
+    console.log('-----------------------Access Tag by ID ------------------------------')
+    console.log(element)
+    element.style.background= "red"
+
+    // get tag by ID
+    const ulTags= document.getElementById("element")
+    console.log(ulTags)
+    ulTags.style.backgroundColor= "lightpink"
+
+    // get tag by ClassName
+    listItem= document.getElementsByClassName("list-item")
+    console.log(listItem)
+
+    // get tag by TagName
+    console.log(document.getElementsByTagName("table"))
+
+    // get tag by query selector
+    listItems= document.querySelector(".list-item")
+    console.log(listItems)
+  
+    listItems2= document.querySelectorAll(".list-item")  //we can also access by id name using(#)
+    console.log(listItems2)
+   
+    listItems3= document.querySelectorAll("ul > li:last-child")   //Access last child
+     console.log(listItems3)
+     console.log(listItems3[0].textContent)          //to check the content inside
+
+     listItems3= document.querySelectorAll("ul > li:nth-child(2)")   //Access nth child
+     console.log(listItems3[0].textContent) 
+
+     
+     console.log("")
+    console.log('-----------------------Access userdefine Attribute ------------------------------')
+   console.log(element.data)           // we cann't access directly userdefine attribute
+   console.log(element.getAttribute('data'))
+   element.setAttribute('orderplace','pending')      //change attribute name and value
+   console.log(element.getAttribute('orderplace'))
+   console.log(element.hasAttribute('orderplace'))    // if attribute present it return true else false
+   console.log(element.attributes)
+
+
+   console.log("")
+    console.log('-------------------Creating,Removing and update element by user-------------------')
+    const newDiv= document.createElement('div')
+   // const newText= document.createTextNode('Hello everyone')
+    //newDiv.appendChild(newText)
+   // ulTag.append(newDiv)
+    //ulTag.prepend(newDiv)
+   // tableTag.after(newDiv)                           All are important
+   // tableTag.before(newDiv)
+   //ulTag.replaceWith(newDiv)
+    // ulTag.remove()
+    newDiv.textContent='hello ji'              //Direct method to add content
+    body.append(newDiv)
+    newDiv.innerHTML= ` <ul id="element" data="valid">                            
+         <li class="list-item">First line</li>                    
+        <li class="list-item">Second line</li>                   
+         <li class="list-item">Third line</li>                    
+    </ul>`                                        //for adding multiple content
+
+//Events
+// clickBtn.onclick= function(){
+//        alert('thanks for clickings')        
+// }
+
+function callMe(event){
+    console.log(event.type)
+    console.log(event.currentTarget)
+    console.log(event.clientX)
+    console.log(event.clientY)
+    alert('Thanks for coming')
+}
+//clickBtn.onclick= callMe                  //another method by function
+
+
+clickBtn.addEventListener('click', callMe)                //another method
+// clickBtn.addEventListener('click', function(){
+//     alert('ohohoh')
+// })
+
+//clickBtn.removeEventListener('click',callMe)
+
+</script>
+</body>
+</html>

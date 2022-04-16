@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classes</title>
+</head>
+<body>
+    <h1>Classes</h1>
+    <script>
+        //------------------Declare class-------------------------
+        class product {
+            constructor(name,price,dis,code){
+                this.itemName= name;
+                this.price= price;
+                this.discount= dis;
+                this.itemCode= code;
+            }
+
+            //----------------------------getter------------------------
+            get getVal(){
+                return this.discount;
+            }
+
+            //----------------------------setter--------------------
+            set setVal(value){
+                this.discount= value;
+            }
+            discountVal(){
+                return this.price*this.discount/100
+            }
+        };
+        const laptop= new product('macbook',90000, 10, 'm90')
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practice</title>
+</head>
+<body>
+    <h2>object practice</h2>
+    <script>
+        const product= {
+            itemName: 'Jam',
+            price: 140,
+            discount: 25,
+            itemCode: 'j50'
+        }
+        console.log(product)
+
+        function create(title, price, dis, code){
+            return {
+                itemName: title,
+            price: price,
+            discount: dis,
+            itemCode: code
+            }
+        }
+        const courseCreate= create('Jam', 140, 25, 'j40');
+         console.log(courseCreate)
+
+         function Course(title, price, dis, code){
+                this.itemName= title,
+            this.Price= price,
+            this.discount= dis,
+           this.itemCode= code,
+           this.countDiscount= function(){
+               return (price*dis)/100;
+           }
+            }
+            const butr= new Course('butter',560, 30,'b60')
+    </script>
+</body>
+</html>

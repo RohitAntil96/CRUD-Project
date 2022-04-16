@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>string</title>
+</head>
+<body>
+    <h2>strings</h2>
+    <script>
+let string= 'hey, what is your name'
+console.log(string)
+
+// let badStr1= 'hey, what's your name';        //wrong string
+
+let goodStr1='hey, what\'s your name'
+console.log(goodStr1)
+
+
+let goodStr2="hey, what's your name"
+console.log(goodStr2)
+
+console.log(goodStr1+" "+goodStr2)
+
+let numstr= '3452'
+console.log(Number(numstr))                  //convert string to number
+
+let stored= Number(numstr)
+console.log(stored.toString())                //convert number to string
+
+console.log(`${string + goodStr2 + numstr}`)       //for spacing purpose
+
+console.log('rohit'+ 260)
+console.log('rohit'+ '560')
+    // -------------------------------String fucntions-------------------------
+
+        let fvtShow1= 'ben10 and chotta bheem'
+console.log(fvtShow1.length)
+console.log(fvtShow1.charAt(6))
+console.log(fvtShow1[8])
+console.log(fvtShow1.indexOf('and'))
+console.log(fvtShow1.slice(17,22))
+var self= 'mY naME iS rohIT'
+console.log(self.toUpperCase())
+console.log(self.toLowerCase())
+    </script>
+</body>
+</html>

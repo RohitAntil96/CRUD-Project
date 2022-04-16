@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>domChallange</title>
+</head>
+<body>
+    <h2>Tasks</h2>
+    <button id="butt">Remove</button>
+    <ol id="clearEle">
+        <li>hello</li>
+        <li>ji</li>
+        <li>list</li>
+        <li>ready</li>
+    </ol>
+
+    <a>The list: </a>
+    <ul>
+      <li><a href="http://google.com">http://google.com</a></li>
+      <li><a href="/tutorial">/tutorial.html</a></li>
+      <li><a href="local/path">local/path</a></li>
+      <li><a href="ftp://ftp.com/my.zip">ftp://ftp.com/my.zip</a></li>
+      <li><a href="http://nodejs.org">http://nodejs.org</a></li>
+      <li><a href="http://internal.com/test">http://internal.com/test</a></li>
+    </ul>
+    <script>
+        // Create Element 
+       
+        // let ul= document.createElement('ul');
+        // document.body.append(ul)
+         
+        // while(true){
+        //     let data= prompt('enter your elements','');
+        //     if(!data){
+        //         break;
+        //     }
+        //     let li= document.createElement('li');
+        //     li.textContent= data;
+        //     ul.append(li);
+        // }
+
+       
+                                 // Clear element
+
+        function clear(){
+         var res= clearEle;
+         res.remove();
+        }
+       // butt.onclick= clear
+      butt.addEventListener('click',clear)
+
+
+                                 //change color of external link
+                         
+     let elements= 'a[href*="://"]:not([href= "http://internal.com"])';
+     let links= document.querySelectorAll(elements);
+     links.forEach(link=> link.style.color= 'green');
+    </script>
+</body>
+</html>

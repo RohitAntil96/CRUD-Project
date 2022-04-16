@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loops</title>
+</head>
+<body>
+    <h2>using loops</h2>
+    <script>
+        
+        // for...in loop
+        let animal= {
+            name: 'Tiger',                  /*loop testing using object*/
+            legs: 4
+        };
+        for(let keys in animal)
+            console.log(keys,animal[keys]);
+        
+        let names=['rohit','antil','jaat'];
+        for(let index in names)
+            console.log(index);
+
+        for(let index in names)
+            console.log(index, names[index]);
+
+        
+            // for...of loop
+        for(let index of names)
+            console.log(index);                    /*loop testing using array*/
+    </script>
+</body>
+</html>
